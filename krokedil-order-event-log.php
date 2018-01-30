@@ -121,13 +121,13 @@ function krokedil_meta_box( $post_type ) {
     }
 }
 
-function krokedil_set_order_version( $order_id, $version ) {
-    update_post_meta( $order_id, '_krokedil_order_version', $version );
+function krokedil_set_order_gateway_version( $order_id, $version ) {
+    update_post_meta( $order_id, '_krokedil_order_gateway_version', $version );
 }
 
 function krokedil_get_order_version() {
     $order_id = get_the_ID();
-    return get_post_meta( $order_id, '_krokedil_order_version', true );
+    return get_post_meta( $order_id, '_krokedil_order_gateway_version', true );
 }
 
 function krokedil_meta_contents() {
