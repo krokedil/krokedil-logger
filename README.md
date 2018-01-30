@@ -16,9 +16,9 @@ $data = An **array** of the data that you want to log.
 
 ### Set the version used for order
 
-Use the function **krokedil_set_order_version**. 
+Use the function **krokedil_set_order_gateway_version**. 
 ```
-Example: krokedil_set_order_version( $order_id, $version );
+Example: krokedil_set_order_gateway_version( $order_id, $version );
 ```
 $order_id = The WooCommerce order id.
 
