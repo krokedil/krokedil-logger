@@ -6,7 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'KROKEDIL_LOGGER_VERSION', '1.0.0' );
 
 add_action( 'admin_enqueue_scripts', 'krokedi_load_admin_scripts' );
-add_action( 'add_meta_boxes', 'krokedil_meta_box' );
+if( defined( 'KROKEDIL_LOGGER_ON' ) ) {
+    add_action( 'add_meta_boxes', 'krokedil_meta_box' );
+}   
 add_action( 'woocommerce_new_order', 'krokedil_add_sessions_to_events', 10, 1);
 
 function krokedi_load_admin_scripts() {
