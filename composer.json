@@ -17,8 +17,6 @@
         "php": ">=5.6.0"
     },
     "autoload": {
-        "psr-4": {
-            "Krokedil-Logger\\": "src"
-        }
+        "files": ["src/krokedil-order-event-log.php"]
     }
 }

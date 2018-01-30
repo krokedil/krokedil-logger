@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-define( 'KROKEDIL_LOGGER_VERSION', '1.0.2' );
+define( 'KROKEDIL_LOGGER_VERSION', '1.0.4' );
 
 add_action( 'admin_enqueue_scripts', 'krokedi_load_admin_scripts' );
 if( defined( 'KROKEDIL_LOGGER_ON' ) ) {
