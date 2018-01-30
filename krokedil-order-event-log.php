@@ -50,9 +50,7 @@ function krokedi_load_admin_scripts() {
 }
 
 function krokedil_log_events( $order_id, $title, $data ) {
-    error_log( 'log event triggered' );
     if( null === $order_id ) {
-        error_log( 'log event session' );
         if( WC()->session->get( '_krokedil_events_session' ) ) {            
             $events = WC()->session->get( '_krokedil_events_session' );
         } else {
@@ -114,8 +112,11 @@ function krokedil_get_events() {
 function krokedil_meta_box( $post_type ) {
     if ( 'shop_order' === $post_type ) {
         $order_id = get_the_ID();
-        if ( get_post_meta( $order_id, '_krokedil_order_events' ) ) {
-            add_meta_box( 'krokedil_order_events', __( 'Events', 'krokedil-for-woocommerce' ), 'krokedil_meta_contents', 'shop_order', 'normal', 'core' );
+        $order = wc_get_order( $order_id );
+        if( false !== strpos( $order->get_payment_method(), KROKEDIL_LOGGER_GATEWAY ) ) {
+            if ( get_post_meta( $order_id, '_krokedil_order_events' ) ) {
+                add_meta_box( 'krokedil_order_events', __( 'Events', 'krokedil-for-woocommerce' ), 'krokedil_meta_contents', 'shop_order', 'normal', 'core' );
+            }
         }
     }
 }
