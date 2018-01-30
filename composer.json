@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Krokedil-Logger": "src"
+            "Krokedil-Logger\\": "src"
         }
     }
 }
