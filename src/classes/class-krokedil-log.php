@@ -61,8 +61,9 @@ class Krokedil_Log {
 	 * @param int $id The WordPress post id.
 	 */
 	public function __construct( $id = 0 ) {
-		if ( 0 !== $id ) {
-			return $this->create_log();
+		if ( 0 === $id ) {
+			$this->create_log();
+			return $this;
 		} else {
 			$this->set_log_id( $id );
 			$this->get_log_request();
@@ -76,7 +77,7 @@ class Krokedil_Log {
 	 * Creates a log object
 	 */
 	public function create_log() {
-		$postarr = array(
+		$postarr      = array(
 			'post_type' => 'krokedil-log',
 		);
 		$id           = wp_insert_post( $postarr );
@@ -177,7 +178,7 @@ class Krokedil_Log {
 	 * Get the value of log_request
 	 */
 	public function get_log_request() {
-		$this->log_request = get_post_meta( $this->log_id, '_krokedil_log_request' );
+		$this->log_request = get_post_meta( $this->log_id, '_krokedil_log_request', true );
 		return $this->log_request;
 	}
 
@@ -185,7 +186,7 @@ class Krokedil_Log {
 	 * Get the value of log_response
 	 */
 	public function get_log_response() {
-		$this->log_response = get_post_meta( $this->log_id, '_krokedil_log_response' );
+		$this->log_response = get_post_meta( $this->log_id, '_krokedil_log_response', true );
 		return $this->log_response;
 	}
 
@@ -193,7 +194,7 @@ class Krokedil_Log {
 	 * Get the value of log_plugin_reference
 	 */
 	public function get_log_plugin_reference() {
-		$this->log_plugin_reference = get_post_meta( $this->log_id, '_krokedil_log_reference' );
+		$this->log_plugin_reference = get_post_meta( $this->log_id, '_krokedil_log_plugin_reference', true );
 		return $this->log_plugin_reference;
 	}
 
@@ -201,7 +202,7 @@ class Krokedil_Log {
 	 * Get the value of log_title
 	 */
 	public function get_log_title() {
-		$this->log_title = get_post_meta( $this->log_id, '_krokedil_log_title' );
+		$this->log_title = get_post_meta( $this->log_id, '_krokedil_log_title', true );
 		return $this->log_title;
 	}
 
@@ -209,7 +210,7 @@ class Krokedil_Log {
 	 * Get the value of log_order_id
 	 */
 	public function get_log_order_id() {
-		$this->log_order_id = get_post_meta( $this->log_id, '_krokedil_log_order_id' );
+		$this->log_order_id = get_post_meta( $this->log_id, '_krokedil_log_order_id', true );
 		return $this->log_order_id;
 	}
 }
