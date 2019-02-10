@@ -1,0 +1,94 @@
+.krokedil_event {
+    margin:5px;
+    background-color:#f9f9f9;
+    overflow-x:auto;
+}
+.krokedil_event_header * {
+    display:inline-block;
+    margin:5px;
+}
+.krokedil_event_header {
+    padding:5px;
+    background-color:#f1f1f1;
+}
+.krokedil_event_header h5 {
+    float:right;
+}
+.krokedil_hidden {
+    display:none;
+    transition: 0.3s;
+}
+.krokedil_shown{
+    clear:both;
+    display:block;
+}
+
+.krokedil_tabs {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.krokedil_request_tab, .krokedil_response_tab {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    transition: 0.3s;
+}
+
+.krokedil_request_tab {
+    border: 1px solid #f1f1f1;
+}
+
+.krokedil_request_tab:hover, .krokedil_response_tab:hover {
+    background-color: #ddd;
+}
+
+
+.krokedil_active_tab {
+    border: 1px solid black!important;
+    cursor: default;
+}
+
+.krokedil_code_1, .krokedil_code_3 {
+    background-color: orangered;
+    border: 1px solid orangered;
+}
+
+.krokedil_code_2 {
+    background-color: lightgreen;
+    border: 1px solid lightgreen;
+}
+
+.krokedil_code_4, .krokedil_code_5 {
+    background-color: indianred;
+    border: 1px solid indianred;
+}
+
+.krokedil_event_request, .krokedil_event_response {
+    padding: 5px;
+}
+
+.krokedil_copy_json {
+    float:right;
+    margin:5px;
+}
+
+.krokedil_event_tab {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.krokedil_active_data_tab {
+    display: block;
+    transition: 0.3s;
+}
+
+.krokedil_event_tab_content {
+    padding: 5px;
+}
