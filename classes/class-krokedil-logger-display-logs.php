@@ -50,7 +50,7 @@ class Krokedil_Logger_Display_Logs {
 		$logs      = array();
 		$log_files = WC_Log_Handler_File::get_log_files();
 		foreach ( $log_files as $log_file ) {
-			if ( false !== strpos( $log_file, 'dibs_easy' ) ) {
+			if ( false !== strpos( $log_file, get_post_meta( get_the_ID(), '_payment_method', true ) ) ) {
 				$file_path = realpath( trailingslashit( WC_LOG_DIR ) . $log_file );
 				$file      = fopen( $file_path, 'r' );
 				$text      = fread( $file, filesize( $file_path ) );
